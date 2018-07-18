@@ -1,5 +1,7 @@
 package it.tommaso.leetcode;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 /**
@@ -87,4 +89,24 @@ public class Test {
         assertEquals(false, routeRobot.backToOriginSimple("LL"));
     }
 
+    @org.junit.Test
+    public void testFlipImage() {
+        FlipImage flipImage = new FlipImage();
+
+        assertTrue(Arrays.deepEquals(new int[][]{{1,0,0},{0,1,0},{1,1,1}}, flipImage.flipSimple(new int[][]{{1,1,0},{1,0,1},{0,0,0}})));
+        assertTrue(Arrays.deepEquals(new int[][]{{1,0,0},{0,1,0},{1,1,1}}, flipImage.flipOnePass(new int[][]{{1,1,0},{1,0,1},{0,0,0}})));
+        assertTrue(Arrays.deepEquals(new int[][]{{1,0,0},{0,1,0},{1,1,1}}, flipImage.flipOnePassAdvanced(new int[][]{{1,1,0},{1,0,1},{0,0,0}})));
+
+        assertTrue(Arrays.deepEquals(new int[][]{{1,0,0,1},{1,0,1,0},{1,1,1,1}}, flipImage.flipSimple(new int[][]{{0,1,1,0},{1,0,1,0},{0,0,0,0}})));
+        assertTrue(Arrays.deepEquals(new int[][]{{1,0,0,1},{1,0,1,0},{1,1,1,1}}, flipImage.flipSimple(new int[][]{{0,1,1,0},{1,0,1,0},{0,0,0,0}})));
+        assertTrue(Arrays.deepEquals(new int[][]{{1,0,0,1},{1,0,1,0},{1,1,1,1}}, flipImage.flipSimple(new int[][]{{0,1,1,0},{1,0,1,0},{0,0,0,0}})));
+
+        assertTrue(Arrays.deepEquals(new int[][]{{1}}, flipImage.flipSimple(new int[][]{{0}})));
+        assertTrue(Arrays.deepEquals(new int[][]{{1}}, flipImage.flipOnePass(new int[][]{{0}})));
+        assertTrue(Arrays.deepEquals(new int[][]{{1}}, flipImage.flipOnePassAdvanced(new int[][]{{0}})));
+
+        assertTrue(Arrays.deepEquals(new int[0][0], flipImage.flipSimple(new int[0][0])));
+        assertTrue(Arrays.deepEquals(new int[0][0], flipImage.flipOnePass(new int[0][0])));
+        assertTrue(Arrays.deepEquals(new int[0][0], flipImage.flipOnePassAdvanced(new int[0][0])));
+    }
 }
