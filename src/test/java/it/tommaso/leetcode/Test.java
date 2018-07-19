@@ -109,4 +109,12 @@ public class Test {
         assertTrue(Arrays.deepEquals(new int[0][0], flipImage.flipOnePass(new int[0][0])));
         assertTrue(Arrays.deepEquals(new int[0][0], flipImage.flipOnePassAdvanced(new int[0][0])));
     }
+
+    @org.junit.Test
+    public void testToeplitz() {
+        ToeplitzMatrix toeplitzMatrix = new ToeplitzMatrix();
+
+        assertFalse(toeplitzMatrix.isToeplitz(new int[][]{{1,2},{2,2}}));
+        assertTrue(toeplitzMatrix.isToeplitz(new int[][]{{1,2,3,4},{5,1,2,3},{9,5,1,2}}));
+    }
 }
