@@ -1,4 +1,4 @@
-package it.tommaso.leetcode;
+package it.tommaso.leetcode.easy;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;

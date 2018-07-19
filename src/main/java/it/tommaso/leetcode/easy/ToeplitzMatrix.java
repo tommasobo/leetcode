@@ -1,4 +1,4 @@
-package it.tommaso.leetcode;
+package it.tommaso.leetcode.easy;
 
 /**
  * @author Tommaso Bonato

@@ -1,4 +1,4 @@
-package it.tommaso.leetcode;
+package it.tommaso.leetcode.easy;
 
 import java.util.Arrays;
 
@@ -116,5 +116,34 @@ public class Test {
 
         assertFalse(toeplitzMatrix.isToeplitz(new int[][]{{1,2},{2,2}}));
         assertTrue(toeplitzMatrix.isToeplitz(new int[][]{{1,2,3,4},{5,1,2,3},{9,5,1,2}}));
+    }
+
+    @org.junit.Test
+    public void testJewels() {
+        JewelsAndStones jewelsAndStones = new JewelsAndStones();
+
+        assertEquals(3, jewelsAndStones.myJewels("aA", "aAAbbbb"));
+        assertEquals(1, jewelsAndStones.myJewels("a", "aAAbbb"));
+        assertEquals(3, jewelsAndStones.myJewelsNoSpace("aA", "aAAbbbb"));
+        assertEquals(1, jewelsAndStones.myJewelsNoSpace("a", "aAAbbb"));
+        assertEquals(3, jewelsAndStones.myJewelsFast("aA", "aAAbbbb"));
+        assertEquals(1, jewelsAndStones.myJewelsFast("a", "aAAbbb"));
+    }
+
+    @org.junit.Test
+    public void testLongestSubsequence() {
+        LongestUncommonSubsequence longestUncommonSubsequence = new LongestUncommonSubsequence();
+
+        assertEquals(3, longestUncommonSubsequence.lengthSubsequence("aba", "cdc"));
+        assertEquals(0, longestUncommonSubsequence.lengthSubsequence("", ""));
+        assertEquals(7, longestUncommonSubsequence.lengthSubsequence("aba", "ckertyg"));
+    }
+
+    @org.junit.Test
+    public void testArrayPartition() {
+        ArrayPartition arrayPartition = new ArrayPartition();
+
+        assertEquals(4, arrayPartition.arrayPairSum(new int[]{1,4,3,2}));
+        assertEquals(4, arrayPartition.arrayPairSumNoSort(new int[]{1,4,3,2}));
     }
 }
