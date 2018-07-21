@@ -23,4 +23,9 @@ public class Test {
         assertTrue(Arrays.equals(new int[]{1,1,1,1,2}, answer));
 
     }
+
+    @org.junit.Test
+    public void testSkyline() {
+        MaxIncreaseSkyline maxIncreaseSkyline = new MaxIncreaseSkyline();
+    }
 }

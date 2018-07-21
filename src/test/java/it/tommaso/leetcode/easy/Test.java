@@ -135,7 +135,7 @@ public class Test {
         LongestUncommonSubsequence longestUncommonSubsequence = new LongestUncommonSubsequence();
 
         assertEquals(3, longestUncommonSubsequence.lengthSubsequence("aba", "cdc"));
-        assertEquals(0, longestUncommonSubsequence.lengthSubsequence("", ""));
+        assertEquals(-1, longestUncommonSubsequence.lengthSubsequence("", ""));
         assertEquals(7, longestUncommonSubsequence.lengthSubsequence("aba", "ckertyg"));
     }
 
@@ -145,5 +145,33 @@ public class Test {
 
         assertEquals(4, arrayPartition.arrayPairSum(new int[]{1,4,3,2}));
         assertEquals(4, arrayPartition.arrayPairSumNoSort(new int[]{1,4,3,2}));
+    }
+
+    @org.junit.Test
+    public void testReverseString() {
+        ReverseString reverseString = new ReverseString();
+
+        assertEquals("oaic", reverseString.reverse("ciao"));
+        assertEquals("", reverseString.reverse(""));
+        assertEquals("a b", reverseString.reverse("b a"));
+        assertEquals(" po aa", reverseString.reverse("aa op "));
+    }
+
+    @org.junit.Test
+    public void goatLatin() {
+        GoatLatin goatLatin = new GoatLatin();
+
+        assertEquals("Imaa peaksmaaa oatGmaaaa atinLmaaaaa", goatLatin.toGoat("I speak Goat Latin"));
+        assertEquals("", goatLatin.toGoat(""));
+    }
+
+    @org.junit.Test
+    public void hamming() {
+        HammingDistance hammingDistance = new HammingDistance();
+
+        assertEquals(2, hammingDistance.distance(1,4));
+        assertEquals(2, hammingDistance.distanceWithoutDefault(1,4));
+        assertEquals(0, hammingDistance.distance(6,6));
+        assertEquals(0, hammingDistance.distanceWithoutDefault(6,6));
     }
 }

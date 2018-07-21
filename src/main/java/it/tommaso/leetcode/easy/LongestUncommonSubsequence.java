@@ -23,6 +23,6 @@ package it.tommaso.leetcode.easy;
      */
     int lengthSubsequence(String a, String b) {
 
-        return a.equals(b) ? a.length() : Math.max(a.length(), b.length());
+        return a.equals(b) ? -1 : Math.max(a.length(), b.length());
     }
 }
